@@ -1,0 +1,15 @@
+<h1>Players list!</h1>
+
+<ul class="players">
+  <li class="players__item" *ngFor="let player of players">
+    <div class="players__photo-container">
+      <img src="{{player.image}}" alt="Player {{player.name}}">
+    </div>
+    <div class="players__content">
+      <p>{{player.name}}</p>
+      <p>{{player.position}}</p>
+      <p>birthDate: {{player.birthDate}}</p>
+      <p>price: {{player.price}}</p>
+    </div>
+  </li>
+</ul>

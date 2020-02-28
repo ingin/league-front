@@ -1,0 +1,41 @@
+p {
+  margin: 0;
+}
+
+.players {
+
+  &__photo-container {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+    overflow: hidden;
+
+    img {
+      zoom: 0.5;
+      top: 50%;
+      left: 50%;
+      position: relative;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+
+  &__content {
+    padding-left: 0.5rem;
+  }
+
+  &__item {
+    display: flex;
+    padding: 0.5rem;
+
+    &:nth-child(even) {
+      background-color: whitesmoke;
+    }
+
+    div {
+      p {
+        margin-bottom: 0.15rem;
+      }
+    }
+  }
+}
