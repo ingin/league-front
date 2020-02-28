@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from "../players.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-players',
@@ -8,12 +9,18 @@ import { PlayersService } from "../players.service";
 })
 export class PlayersComponent implements OnInit {
 
+  public slug;
   public players = [];
 
-  constructor(private _playersService: PlayersService) { }
+  constructor(
+    private _playersService: PlayersService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this._playersService.getPlayers()
+    this.slug = this.route.snapshot.paramMap.get("slug");
+
+    this._playersService.getPlayers(this.slug)
       .subscribe(data => this.players = data);
   }
 

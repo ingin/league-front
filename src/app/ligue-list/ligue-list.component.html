@@ -1,13 +1,12 @@
 <h1>Leagues list!</h1>
-
+<h3>{{errorMsg}}</h3>
 <ul class="players">
-  <li class="players__item" *ngFor="let league of leagues">
+  <li (click)="onClick(league)" class="players__item" *ngFor="let league of leagues">
     <div>
       <img src="{{league.logo}}" alt="Player {{league.logo}}" class="players__photo">
     </div>
     <div class="players__content">
-      <p>{{league.title}}</p>
-      <p>{{league.createdAt}}</p>
+      <h2>{{league.title}}</h2>
     </div>
   </li>
 </ul>

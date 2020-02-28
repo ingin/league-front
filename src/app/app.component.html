@@ -26,6 +26,26 @@
     margin: 8px 0;
   }
 
+  nav {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  nav a {
+    padding: 0.25rem 0.5rem;
+    background-color: whitesmoke;
+    margin-left: 0.25rem;
+  }
+
+  nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+  }
+
+  nav a.active {
+    color: #039be5;
+  }
+
   p {
     margin: 0;
   }
@@ -326,9 +346,10 @@
 
   <app-ligue-search></app-ligue-search>
 
-  <app-ligue-list></app-ligue-list>
-
-  <app-players></app-players>
+  <nav>
+    <a routerLink="/leagues" routerLinkActive="active">Leagues</a>
+    <a routerLink="/players" routerLinkActive="active">Players</a>
+  </nav>
 
 </div>
 

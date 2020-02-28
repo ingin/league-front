@@ -11,8 +11,8 @@ export class PlayersService {
 
   constructor(private http: HttpClient) { }
 
-  getPlayers(): Observable<IPlayers[]> {
-    return this.http.get<IPlayers[]>(this._url);
+  getPlayers(leagueSlug): Observable<IPlayers[]> {
+    return this.http.get<IPlayers[]>(`${this._url}?slug=${leagueSlug}`);
   }
 
 }
