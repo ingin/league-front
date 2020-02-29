@@ -7,12 +7,18 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class PlayersService {
-  private _url: string = "/assets/data/players.json";
+  private _url: string = "http://localhost:8000/players";
 
   constructor(private http: HttpClient) { }
 
   getPlayers(leagueSlug): Observable<IPlayers[]> {
-    return this.http.get<IPlayers[]>(`${this._url}?slug=${leagueSlug}`);
+    let queryParams = "";
+
+    if (leagueSlug !== null) {
+      queryParams = `?slug=${leagueSlug}`;
+    }
+
+    return this.http.get<IPlayers[]>(`${this._url}${queryParams}`);
   }
 
 }
