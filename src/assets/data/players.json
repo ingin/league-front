@@ -1,6 +1,8 @@
 [
   {
     "id": 1,
+    "league": 2,
+    "status": 1,
     "name": "Cristiano Ronaldo",
     "position": "Attaquant",
     "birthDate": "1981-11-22",
@@ -9,6 +11,8 @@
   },
   {
     "id": 2,
+    "league": 1,
+    "status": 1,
     "name": "Ribery",
     "position": "Défenseur",
     "birthDate": "1981-08-22",
@@ -17,6 +21,8 @@
   },
   {
     "id": 3,
+    "league": 1,
+    "status": 1,
     "name": "Zinedine Zidane",
     "position": "Attaquant",
     "birthDate": "1998-06-22",
@@ -25,6 +31,8 @@
   },
   {
     "id": 4,
+    "league": 1,
+    "status": 1,
     "name": "Antoine Griezmann",
     "position": "Attaquant",
     "birthDate": "1995-04-22",
@@ -33,6 +41,8 @@
   },
   {
     "id": 5,
+    "league": 2,
+    "status": 1,
     "name": "Hugo Lloris",
     "position": "Gardien",
     "birthDate": "1992-01-22",

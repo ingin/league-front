@@ -10,6 +10,7 @@ import { PlayerComponent } from './player/player.component';
 import { PlayersService } from './players.service';
 import { LeaguesService } from './leagues.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LigueSearchComponent,
     PlayerComponent,
     routingComponents,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
