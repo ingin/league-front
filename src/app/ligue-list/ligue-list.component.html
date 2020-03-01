@@ -1,17 +1,19 @@
-<h1>Leagues</h1>
+<div class="content">
+  <h1>Leagues</h1>
 
-<h3>{{errorMsg}}</h3>
+  <h3>{{errorMsg}}</h3>
 
-<ul class="players">
-  <li (click)="onClick(league)" class="players__item" *ngFor="let league of leagues">
+  <ul class="players">
+    <li (click)="onClick(league)" class="players__item" *ngFor="let league of leagues">
 
-    <div class="players__content">
-      <h2>{{league.title}}</h2>
-    </div>
+      <div class="players__content">
+        <h2>{{league.title}}</h2>
+      </div>
 
-    <div>
-      <img src="{{league.logo}}" alt="Player {{league.logo}}" class="players__photo">
-    </div>
+      <div>
+        <img src="{{league.logo}}" alt="Player {{league.logo}}" class="players__photo">
+      </div>
 
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>

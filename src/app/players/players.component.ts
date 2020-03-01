@@ -18,6 +18,24 @@ export class PlayersComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  formatDateHuman(dateStr) {
+    const date = new Date(dateStr);
+    const day = (date.getDate()).toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+
+    return day + '/'+ month + '/' + date.getFullYear();
+  }
+
+  formatNumber(value) {
+    return new Intl.NumberFormat(
+      "fr-FR",
+      {
+        style: 'currency',
+        currency: 'EUR'
+      })
+      .format(value)
+  }
+
   ngOnInit(): void {
     this.slug = this.route.snapshot.paramMap.get("slug");
     this.isResult = this.slug !== null;

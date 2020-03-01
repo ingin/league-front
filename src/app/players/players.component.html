@@ -1,27 +1,30 @@
-<div *ngIf="isResult">
-  <button routerLink="/leagues"><< Back to league list</button>
+<div class="content">
+  <div *ngIf="isResult">
+    <button routerLink="/leagues"><< Back to league list</button>
+  </div>
+
+  <div *ngIf="slug; else elseBlock">
+    <h1>Players of {{slug}}</h1>
+  </div>
+  <ng-template #elseBlock>
+    <h1>Players</h1>
+  </ng-template>
+
+  <ul class="players">
+    <li class="players__item" *ngFor="let player of players">
+
+      <div class="players__photo-container">
+        <img src="{{player.image}}" alt="Player {{player.name}}">
+      </div>
+
+      <div class="players__content">
+        <p>{{player.name}} (<b>Ligue #{{player.league}}</b>)</p>
+        <p><b>Position:</b> {{player.position}}</p>
+        <p><b>BirthDate:</b> {{formatDateHuman(player.birthDate)}}</p>
+        <p><b>Price:</b> {{formatNumber(player.price)}}</p>
+      </div>
+
+    </li>
+  </ul>
+
 </div>
-
-<div *ngIf="slug; else elseBlock">
-  <h1>Players of {{slug}}</h1>
-</div>
-<ng-template #elseBlock>
-  <h1>Players</h1>
-</ng-template>
-
-<ul class="players">
-  <li class="players__item" *ngFor="let player of players">
-
-    <div class="players__photo-container">
-      <img src="{{player.image}}" alt="Player {{player.name}}">
-    </div>
-
-    <div class="players__content">
-      <p>{{player.name}} (<b>Ligue #{{player.league}}</b>)</p>
-      <p>{{player.position}}</p>
-      <p>birthDate: {{player.birthDate}}</p>
-      <p>price: {{player.price}}</p>
-    </div>
-
-  </li>
-</ul>

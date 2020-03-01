@@ -1,13 +1,27 @@
+.content {
+  padding: 1rem;
+  width: 320px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 0;
 }
 
 .players {
 
+  margin: 0;
+
   &__photo-container {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background-color: gray;
     overflow: hidden;
 
