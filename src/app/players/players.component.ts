@@ -22,6 +22,19 @@ export class PlayersComponent implements OnInit {
     this.slug = this.route.snapshot.paramMap.get("slug");
     this.isResult = this.slug !== null;
 
+    this.route.params.subscribe(params => {
+      console.log("params", params);
+
+      this.slug = params.slug;
+
+      console.log("this.slug", this.slug);
+
+      if (this.slug !== undefined) {
+        this._playersService.getPlayers(this.slug)
+          .subscribe(data => this.players = data);
+      }
+    });
+
     this._playersService.getPlayers(this.slug)
       .subscribe(data => this.players = data);
   }

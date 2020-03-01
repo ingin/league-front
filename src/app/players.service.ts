@@ -14,7 +14,7 @@ export class PlayersService {
   getPlayers(leagueSlug): Observable<IPlayers[]> {
     let queryParams = "";
 
-    if (leagueSlug !== null) {
+    if (leagueSlug !== undefined) {
       queryParams = `?slug=${leagueSlug}`;
     }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaguesService } from "../leagues.service";
+import { Router} from "@angular/router";
+import slugify from "slugify";
 
 const SEARCH_NB_MIN_LENGTH = 3;
 
@@ -18,6 +20,7 @@ export class LigueSearchComponent implements OnInit {
 
   constructor(
     private _leaguesService: LeaguesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +31,6 @@ export class LigueSearchComponent implements OnInit {
   }
 
   updateSearch(e) {
-    console.log("e", e.target.value);
     this.userSearch = e.target.value;
 
     if(this.shouldCallApi(this.userSearch)) {
@@ -37,18 +39,12 @@ export class LigueSearchComponent implements OnInit {
   }
 
   fetch() {
-    console.log("this.userSearch", this.userSearch);
-    console.log("call endpoint now !");
+    console.log("fetch / this.userSearch", this.userSearch);
 
     this._leaguesService.getLeagues(this.userSearch)
       .subscribe(
         data => {
-          console.log("nb data", data.length);
-
           this.noResultFound = data.length === 0;
-
-          console.log("noResultFound", this.noResultFound);
-
           this.leagues = data;
         }
         , error => this.errorMsg = error);
@@ -58,6 +54,10 @@ export class LigueSearchComponent implements OnInit {
     console.log("e.target.value", e.target.innerText);
     this.userSearch = e.target.innerText;
     this.leagues = [];
+
+    this.router.navigate(
+      ["/leagues", slugify(this.userSearch.toLowerCase())]
+    )
   }
 
 }
