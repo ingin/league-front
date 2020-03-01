@@ -11,6 +11,7 @@ export class PlayersComponent implements OnInit {
 
   public slug;
   public players = [];
+  public isResult = false;
 
   constructor(
     private _playersService: PlayersService,
@@ -19,9 +20,9 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit(): void {
     this.slug = this.route.snapshot.paramMap.get("slug");
+    this.isResult = this.slug !== null;
 
     this._playersService.getPlayers(this.slug)
       .subscribe(data => this.players = data);
   }
-
 }

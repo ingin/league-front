@@ -1,0 +1,20 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.leagues {
+  background-color: #1976d2;
+
+  &__item {
+    padding: 0.25rem 0.5rem;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(#1976d2, 15%);
+      color: #FFFFFF;
+    }
+  }
+}

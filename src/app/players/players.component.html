@@ -1,15 +1,27 @@
-<h1>Players list!</h1>
-<h3>{{slug}}</h3>
+<div *ngIf="isResult">
+  <button routerLink="/leagues"><< Back to league list</button>
+</div>
+
+<div *ngIf="slug; else elseBlock">
+  <h1>Players of {{slug}}</h1>
+</div>
+<ng-template #elseBlock>
+  <h1>Players</h1>
+</ng-template>
+
 <ul class="players">
   <li class="players__item" *ngFor="let player of players">
+
     <div class="players__photo-container">
       <img src="{{player.image}}" alt="Player {{player.name}}">
     </div>
+
     <div class="players__content">
       <p>{{player.name}}</p>
       <p>{{player.position}}</p>
       <p>birthDate: {{player.birthDate}}</p>
       <p>price: {{player.price}}</p>
     </div>
+
   </li>
 </ul>

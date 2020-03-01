@@ -1,2 +1,19 @@
-<input type="text" name="ligue-search" placeholder="Search by league" bind-disabled="status">
-<button>{{search}}</button>
+<div>
+  <input
+    type="text"
+    name="ligue-search"
+    placeholder="Search by league"
+    bind-disabled="status"
+    (keyup)="updateSearch($event)"
+    value="{{userSearch}}"
+  >
+</div>
+<ul class="leagues">
+  <li *ngIf="noResultFound" class="leagues__item">No result was found!</li>
+  <li *ngFor="let league of leagues"
+      class="leagues__item"
+      (click)="setUserSelection($event)"
+  >
+    {{league.title}}
+  </li>
+</ul>

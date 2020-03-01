@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LigueSearchComponent } from './ligue-search/ligue-search.component';
-import { PlayerComponent } from './player/player.component';
 
 import { PlayersService } from './players.service';
 import { LeaguesService } from './leagues.service';
@@ -16,7 +15,6 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     LigueSearchComponent,
-    PlayerComponent,
     routingComponents,
     PageNotFoundComponent,
     HomeComponent
